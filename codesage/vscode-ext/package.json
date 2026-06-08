@@ -1,0 +1,42 @@
+{
+  "name": "codesage",
+  "displayName": "CodeSage",
+  "description": "Autonomous multi-agent software engineering system — semantic code search in VS Code",
+  "version": "0.1.0",
+  "publisher": "codesage",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:codesage.search"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codesage.search",
+        "title": "CodeSage: Search"
+      }
+    ],
+    "configuration": {
+      "title": "CodeSage",
+      "properties": {
+        "codesage.apiPort": {
+          "type": "number",
+          "default": 8000,
+          "description": "Port number for the CodeSage API server"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
